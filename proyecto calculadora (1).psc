@@ -1,0 +1,231 @@
+Proceso Calculadora
+    Definir opcion, n, i, j Como Entero
+    Definir a, b, suma, resta Como Real
+	
+    Repetir
+        Escribir "=== MENÚ DE OPCIONES ==="
+        Escribir "1. Suma"
+        Escribir "2. Resta"
+        Escribir "3. Multiplicación"
+        Escribir "4. División"
+        Escribir "5. Sumar todos los valores de la matriz"
+        Escribir "6. Restar todos los valores de la matriz"
+        Escribir "7. Suma de matrices"
+        Escribir "8. Resta de matrices"
+        Escribir "9. Triángulo con números"
+        Escribir "10. Rectangulo con asteriscos"
+		Escribir "11. Estadistica en una lista de números"
+        Escribir "0. Salir"
+        Escribir "Seleccione una opción:"
+        Leer opcion
+		
+        Segun opcion Hacer
+            Caso 1:
+                Escribir "Ingrese dos números:"
+                Leer a, b
+                Escribir "Resultado: ", a + b
+				
+            Caso 2:
+                Escribir "Ingrese dos números:"
+                Leer a, b
+                Escribir "Resultado: ", a - b
+				
+            Caso 3:
+                Escribir "Ingrese dos números:"
+                Leer a, b
+                Escribir "Resultado: ", a * b
+				
+            Caso 4:
+                Escribir "Ingrese dos números:"
+                Leer a, b
+                Si b <> 0 Entonces
+                    Escribir "Resultado: ", a / b
+                Sino
+                    Escribir "Error: División entre cero no permitida"
+                FinSi
+				
+            Caso 5:
+                Escribir "Ingrese el tamaño de la matriz (n x n):"
+                Leer n
+                Dimension matriz[n, n]
+                suma <- 0
+                Escribir "Ingrese los valores de la matriz:"
+                Para i <- 0 Hasta n-1
+                    Para j <- 0 Hasta n-1
+                        Leer matriz[i, j]
+                        suma <- suma + matriz[i, j]
+                    FinPara
+                FinPara
+                Escribir "La suma total de los elementos es: ", suma
+				
+            Caso 6:
+                Escribir "Ingrese el tamaño de la matriz (n x n):"
+                Leer n
+                Dimension matriz[n, n]
+                Escribir "Ingrese los valores de la matriz:"
+                Para i <- 0 Hasta n-1
+                    Para j <- 0 Hasta n-1
+                        Leer matriz[i, j]
+                    FinPara
+                FinPara
+                resta <- matriz[0, 0]
+                Para i <- 0 Hasta n-1
+                    Para j <- 0 Hasta n-1
+                        Si i <> 0 O j <> 0 Entonces
+                            resta <- resta - matriz[i, j]
+                        FinSi
+                    FinPara
+                FinPara
+                Escribir "La resta total de los elementos es: ", resta
+				
+            Caso 7:
+                Escribir "Ingrese el tamaño de las matrices (n x n):"
+                Leer n
+                Dimension A[n, n], B[n, n], C[n, n]
+                Escribir "Ingrese los valores de la primera matriz A:"
+                Para i <- 0 Hasta n-1
+                    Para j <- 0 Hasta n-1
+                        Leer A[i, j]
+                    FinPara
+                FinPara
+                Escribir "Ingrese los valores de la segunda matriz B:"
+                Para i <- 0 Hasta n-1
+                    Para j <- 0 Hasta n-1
+                        Leer B[i, j]
+                    FinPara
+                FinPara
+                Para i <- 0 Hasta n-1
+                    Para j <- 0 Hasta n-1
+                        C[i, j] <- A[i, j] + B[i, j]
+                    FinPara
+                FinPara
+                Escribir "Resultado de la suma de matrices:"
+                Para i <- 0 Hasta n-1
+                    Para j <- 0 Hasta n-1
+                        Escribir Sin Saltar C[i, j], " "
+                    FinPara
+                    Escribir ""
+                FinPara
+				
+            Caso 8:
+                Escribir "Ingrese el tamaño de las matrices (n x n):"
+                Leer n
+                Dimension A[n, n], B[n, n], C[n, n]
+                Escribir "Ingrese los valores de la primera matriz A:"
+                Para i <- 0 Hasta n-1
+                    Para j <- 0 Hasta n-1
+                        Leer A[i, j]
+                    FinPara
+                FinPara
+                Escribir "Ingrese los valores de la segunda matriz B:"
+                Para i <- 0 Hasta n-1
+                    Para j <- 0 Hasta n-1
+                        Leer B[i, j]
+                    FinPara
+                FinPara
+                Para i <- 0 Hasta n-1
+                    Para j <- 0 Hasta n-1
+                        C[i, j] <- A[i, j] - B[i, j]
+                    FinPara
+                FinPara
+                Escribir "Resultado de la resta de matrices:"
+                Para i <- 0 Hasta n-1
+                    Para j <- 0 Hasta n-1
+                        Escribir Sin Saltar C[i, j], " "
+                    FinPara
+                    Escribir ""
+                FinPara
+				
+            Caso 9:
+                Escribir "Ingrese la cantidad de filas para el triángulo:"
+                Leer n
+                Para i <- 1 Hasta n
+                    k <- 2 * i - 1
+                    Mientras k >= 1
+                        Escribir Sin Saltar k, " "
+                        k <- k - 2
+                    FinMientras
+                    Escribir ""
+                FinPara
+				
+            Caso 10:
+                Escribir "Ingrese el tamaño del cuadro:"
+                Leer n
+                Para i <- 1 Hasta n
+                    Para j <- 1 Hasta n
+                        Si i = 1 O i = n O j = 1 O j = n Entonces
+                            Escribir Sin Saltar "* "
+                        Sino
+                            Escribir Sin Saltar "  "
+                        FinSi
+                    FinPara
+                    Escribir ""
+                FinPara
+				
+        
+			Caso  11:
+				Definir numeros, entrada, promedio, maximo, minimo Como Real
+				Definir contador, arriba, abajo Como Entero
+				Dimension numeros[100]
+
+        contador <- 0
+        suma <- 0
+
+				Escribir "Ingrese hasta 100 números (ingrese -1 para terminar):"
+
+        Repetir
+            Escribir "Ingrese un número: "
+            Leer entrada
+
+            Si entrada <> -1 Entonces
+                Si contador < 100 Entonces
+                    contador <- contador + 1
+                    numeros[contador] <- entrada
+                    suma <- suma + entrada
+                Sino
+                    Escribir "Ya se han ingresado 100 números. Se termina la entrada."
+                    entrada <- -1
+                Fin Si
+            Fin Si
+        Hasta Que entrada = -1
+
+        Si contador = 0 Entonces
+            Escribir "No se ingresaron números."
+        Sino
+            promedio <- suma / contador
+
+            maximo <- numeros[1]
+            minimo <- numeros[1]
+
+            Para i <- 2 Hasta contador
+                Si numeros[i] > maximo Entonces
+                    maximo <- numeros[i]
+                Fin Si
+                Si numeros[i] < minimo Entonces
+                    minimo <- numeros[i]
+                Fin Si
+            Fin Para
+
+            arriba <- 0
+            abajo <- 0
+
+            Para i <- 1 Hasta contador
+                Si numeros[i] > promedio Entonces
+                    arriba <- arriba + 1
+                Fin Si
+                Si numeros[i] < promedio Entonces
+                    abajo <- abajo + 1
+                Fin Si
+            Fin Para
+
+            Escribir "Suma: ", suma
+            Escribir "Promedio: ", promedio
+            Escribir "Número mayor: ", maximo
+            Escribir "Número menor: ", minimo
+            Escribir "Números por encima del promedio: ", arriba
+            Escribir "Números por debajo del promedio: ", abajo
+        Fin Si
+
+    FinSegun
+    Hasta Que opcion = 0
+FinProceso
